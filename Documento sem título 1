@@ -1,0 +1,8 @@
+GRUPO ALVO -> /incoming
+
+Grupo alvo envia as mensagens para o bot de copy
+Bot de copy processa e retorna para o grupo alvo
+
+Para obter id do grupo alvo utilizar o bot get chat id
+
+O bot de cópia deve estar dentro do grupo para envio das mensagens

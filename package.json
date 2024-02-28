@@ -1,0 +1,21 @@
+{
+  "name": "pessoal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "whatsapp-web.js": "^1.23.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "@types/node-telegram-bot-api": "^0.64.1"
+  }
+}

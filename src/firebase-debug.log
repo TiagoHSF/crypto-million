@@ -1,0 +1,29 @@
+[debug] [2024-02-28T00:31:09.537Z] ----------------------------------------------------------------------
+[debug] [2024-02-28T00:31:09.539Z] Command:       /home/tiago/.nvm/versions/node/v18.19.0/bin/node /home/tiago/.nvm/versions/node/v18.19.0/bin/firebase init
+[debug] [2024-02-28T00:31:09.539Z] CLI Version:   13.4.0
+[debug] [2024-02-28T00:31:09.539Z] Platform:      linux
+[debug] [2024-02-28T00:31:09.540Z] Node Version:  v18.19.0
+[debug] [2024-02-28T00:31:09.540Z] Time:          Tue Feb 27 2024 21:31:09 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2024-02-28T00:31:09.540Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-28T00:31:09.545Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-28T00:31:09.545Z] > authorizing via signed-in user (tiagosilvadev2002@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/tiago/Desktop/projects/pessoal/auto-copy-signals/src
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-02-28T00:31:24.221Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
