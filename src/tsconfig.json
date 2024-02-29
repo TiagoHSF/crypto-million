@@ -3,6 +3,7 @@
     "target": "es6",
     "module": "commonjs",
     "outDir": "./dist",
+    "rootDir": "./src",  // Ajuste o caminho do rootDir para "./src"
     "strict": true,
     "esModuleInterop": true
   },
@@ -10,6 +11,6 @@
     "src/**/*"
   ],
   "exclude": [
-    "./node_modules"
+    "dist"  // Ajuste o caminho do exclude para "dist"
   ]
 }
