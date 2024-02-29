@@ -5,23 +5,23 @@ import { environmentProd } from './environment';
 //bot para tratar as mensagens
 const bot = new TelegramBot(environmentProd.botId, { polling: true });
 const groupId = environmentProd.telegramGroupId;
-const whatsappGroup = environmentProd.whatsappGroupId;
+// const whatsappGroup = environmentProd.whatsappGroupId;
 
 
 const urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 const mentionRegex = /@[\w.-]+/g;
 
-const { exec } = require('child_process');
-const client = new Client({
-    puppeteer: {
-        headless: true, // Define se o navegador deve ser visível ou não
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox'
-        ]
-    },
-    restartOnAuthFail: true, // Reiniciar automaticamente em caso de falha na autenticação
-});
+// const { exec } = require('child_process');
+// const client = new Client({
+//     puppeteer: {
+//         headless: true, // Define se o navegador deve ser visível ou não
+//         args: [
+//             '--no-sandbox',
+//             '--disable-setuid-sandbox'
+//         ]
+//     },
+//     restartOnAuthFail: true, // Reiniciar automaticamente em caso de falha na autenticação
+// });
 
 import { Message } from 'node-telegram-bot-api';
 
@@ -69,19 +69,19 @@ function sendMessageToTelegramGroup(msg: string) {
 //     });
 // }
 
-client.initialize();
+// client.initialize();
 
-bot.on('polling_error', (error: any) => {
-    exec('cd src && npx ts-node index.ts', (err: any, stdout: any, stderr: any) => {
-        if (err) {
-            console.error(`Erro ao recompilar o projeto: ${err}`);
-            return;
-        }
-        console.log(`Projeto recompilado com sucesso!.`);
-    });
+// bot.on('polling_error', (error: any) => {
+//     exec('cd src && npx ts-node index.ts', (err: any, stdout: any, stderr: any) => {
+//         if (err) {
+//             console.error(`Erro ao recompilar o projeto: ${err}`);
+//             return;
+//         }
+//         console.log(`Projeto recompilado com sucesso!.`);
+//     });
 
-    console.error(error);
-});
+//     console.error(error);
+// });
 
 console.log('O bot está em execução...');
 
