@@ -41,37 +41,37 @@ function sendMessageToTelegramGroup(msg: string) {
         .then(() => {
             console.log('Mensagem enviada com sucesso!');
         })
-        .catch((error) => {
+        .catch((error: any) => {
             console.error('Erro ao enviar mensagem:', error);
         });
 }
 
-function sendMessageToWhatsappGroup(msg: string) {
-    console.log(client);
-    client.on('ready', async () => {
-        const groupName = 'CONTAS DO MÊS';
+// function sendMessageToWhatsappGroup(msg: string) {
+//     console.log(client);
+//     client.on('ready', async () => {
+//         const groupName = 'CONTAS DO MÊS';
 
-        try {
-            const chats = await client.getChats();
-            console.log(chats);
-            const group = chats.find(chat => chat.isGroup && chat.name === groupName);
+//         try {
+//             const chats = await client.getChats();
+//             console.log(chats);
+//             const group = chats.find(chat => chat.isGroup && chat.name === groupName);
 
-            if (group) {
-                // Envie a mensagem para o grupo
-                await group.sendMessage('Sua mensagem aqui');
-                console.log('Mensagem enviada com sucesso para o grupo!');
-            } else {
-                console.error(`Grupo '${groupName}' não encontrado.`);
-            }
-        } catch (error) {
-            console.error('Erro ao enviar mensagem para o grupo:', error);
-        }
-    });
-}
+//             if (group) {
+//                 // Envie a mensagem para o grupo
+//                 await group.sendMessage('Sua mensagem aqui');
+//                 console.log('Mensagem enviada com sucesso para o grupo!');
+//             } else {
+//                 console.error(`Grupo '${groupName}' não encontrado.`);
+//             }
+//         } catch (error) {
+//             console.error('Erro ao enviar mensagem para o grupo:', error);
+//         }
+//     });
+// }
 
 client.initialize();
 
-bot.on('polling_error', (error) => {
+bot.on('polling_error', (error: any) => {
     exec('cd src && npx ts-node index.ts', (err: any, stdout: any, stderr: any) => {
         if (err) {
             console.error(`Erro ao recompilar o projeto: ${err}`);
@@ -87,7 +87,7 @@ console.log('O bot está em execução...');
 
 setInterval(() => {
     console.log("is alive...");
-}, 3 * 60 * 1000);
+}, 30000);
 
 // const puppeteer = require('puppeteer');
 
