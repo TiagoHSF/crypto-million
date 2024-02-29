@@ -1,5 +1,5 @@
 import TelegramBot, { CallbackQuery, InlineKeyboardMarkup, ReplyKeyboardMarkup } from 'node-telegram-bot-api';
-import { Client, MessageMedia } from 'whatsapp-web.js';
+// import { Client, MessageMedia } from 'whatsapp-web.js';
 import { environmentProd } from './environment';
 
 //bot para tratar as mensagens
@@ -8,7 +8,7 @@ const groupId = environmentProd.telegramGroupId;
 // const whatsappGroup = environmentProd.whatsappGroupId;
 
 
-const urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+const urlRegex = /(\b(?!t\.me\/)(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 const mentionRegex = /@[\w.-]+/g;
 
 // const { exec } = require('child_process');
