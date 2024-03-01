@@ -23,6 +23,9 @@ const groupId = environmentProd.telegramGroupId;
 const bitLyRegex = /bit\.ly\/\w+/ig;
 const tMeRegex = /t\.me\/\w+/ig;
 const mentionRegex = /@\w+/g;
+const httpUrlRegex = /http:\/\/\S+/gi;
+const httpsUrlRegex = /https:\/\/\S+/gi;
+
 
 import { Message } from 'node-telegram-bot-api';
 
@@ -35,6 +38,8 @@ bot.on('message', (msg: Message) => {
         textMessage = textMessage.replace(bitLyRegex, '');
         textMessage = textMessage.replace(tMeRegex, '');
         textMessage = textMessage.replace(mentionRegex, '');
+        textMessage = textMessage.replace(httpUrlRegex, '');
+        textMessage = textMessage.replace(httpsUrlRegex, '');
         console.log(textMessage)
         sendMessageToTelegramGroup(textMessage);
     }
