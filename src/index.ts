@@ -6,12 +6,12 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 4000;
 
-app.get('/', (req, res) => {
+app.get('/', (req: any, res: any) => {
   res.send('Hello World!')
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Bot app listening on port ${port}`)
 })
 
 //bot para tratar as mensagens
