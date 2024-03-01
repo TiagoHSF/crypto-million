@@ -2,26 +2,27 @@ import TelegramBot, { CallbackQuery, InlineKeyboardMarkup, ReplyKeyboardMarkup }
 // import { Client, MessageMedia } from 'whatsapp-web.js';
 import { environmentProd } from './environment';
 
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
 //bot para tratar as mensagens
 const bot = new TelegramBot(environmentProd.botId, { polling: true });
 const groupId = environmentProd.telegramGroupId;
 // const whatsappGroup = environmentProd.whatsappGroupId;
 
 
-const urlRegex = /(\b(?!t\.me\/)(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-const mentionRegex = /@[\w.-]+/g;
-
-// const { exec } = require('child_process');
-// const client = new Client({
-//     puppeteer: {
-//         headless: true, // Define se o navegador deve ser visível ou não
-//         args: [
-//             '--no-sandbox',
-//             '--disable-setuid-sandbox'
-//         ]
-//     },
-//     restartOnAuthFail: true, // Reiniciar automaticamente em caso de falha na autenticação
-// });
+const bitLyRegex = /bit\.ly\/\w+/ig;
+const tMeRegex = /t\.me\/\w+/ig;
+const mentionRegex = /@\w+/g;
 
 import { Message } from 'node-telegram-bot-api';
 
@@ -30,8 +31,11 @@ bot.on('message', (msg: Message) => {
     if (msg && msg.text) {
         console.log('Mensagem recebida!')
         let textMessage = msg.text || "";
-        textMessage = textMessage.replace(urlRegex, '');
+        console.log(textMessage);
+        textMessage = textMessage.replace(bitLyRegex, '');
+        textMessage = textMessage.replace(tMeRegex, '');
         textMessage = textMessage.replace(mentionRegex, '');
+        console.log(textMessage)
         sendMessageToTelegramGroup(textMessage);
     }
 });
