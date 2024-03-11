@@ -6,6 +6,6 @@ export const environmentDev = {
 
 export const environmentProd = {
   botId: '6344531985:AAF38bqx62oUtSGKm2wFMi5JJS7WXj-LdNQ',
-  telegramGroupId: '-1802746800',
+  telegramGroupId: '-1001802746800',
   whatsappGroupId: ''
 };
