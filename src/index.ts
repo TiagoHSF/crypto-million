@@ -7,16 +7,16 @@ const app = express()
 const port = process.env.PORT || 4000;
 
 app.get('/', (req: any, res: any) => {
-  res.send('Hello World!')
+    res.send('Hello World!')
 })
 
 app.listen(port, () => {
-  console.log(`Bot app listening on port ${port}`)
+    console.log(`Bot app listening on port ${port}`)
 })
 
 //bot para tratar as mensagens
-const bot = new TelegramBot(environmentProd.botId, { polling: true });
-const groupId = environmentProd.telegramGroupId;
+const bot = new TelegramBot('6344531985:AAF38bqx62oUtSGKm2wFMi5JJS7WXj-LdNQ', { polling: true });
+const groupId = '-1001802746800';
 // const whatsappGroup = environmentProd.whatsappGroupId;
 
 
