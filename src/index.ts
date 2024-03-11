@@ -1,6 +1,6 @@
 import TelegramBot, { CallbackQuery, InlineKeyboardMarkup, ReplyKeyboardMarkup } from 'node-telegram-bot-api';
 // import { Client, MessageMedia } from 'whatsapp-web.js';
-import { environmentProd } from './environment';
+import { environmentDev, environmentProd } from './environment';
 
 const express = require('express')
 const app = express()
