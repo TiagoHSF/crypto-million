@@ -41,7 +41,12 @@ bot.on('message', (msg: Message) => {
         textMessage = textMessage.replace(httpUrlRegex, '');
         textMessage = textMessage.replace(httpsUrlRegex, '');
         console.log(textMessage)
-        sendMessageToTelegramGroup(textMessage);
+        if(textMessage.toUpperCase().includes("ALAVANCAGEM") || textMessage.includes('%')){
+            console.log("ENVIADA")
+            sendMessageToTelegramGroup(textMessage);
+        } else {
+            console.log("NÃO ENVIADA")
+        }
     }
 });
 
